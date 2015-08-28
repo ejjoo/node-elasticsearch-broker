@@ -21,6 +21,9 @@
     "async",
     "bucket_emitter"
   ],
+  "repository": {
+    "url": "git://github.com/ejjoo/node-elasticsearch-broker.git"
+  },
   "author": "ejjoo",
   "license": "ISC"
 }
