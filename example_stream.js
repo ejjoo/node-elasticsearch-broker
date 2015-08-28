@@ -45,14 +45,13 @@ var parser = function(str, callback) {
 };
 
 var broker = es_broker.create({
-	stream: frs,
 	parser: parser,
 	target: estarget,
 	max_bulk_qtty: 1000,
 	max_request_num: 10,
 	verbose: true,
 	verbose_data: true,
-	index: 'index',
+	index: 'index'
 });
 
 frs.pipe(eventstream.split())
