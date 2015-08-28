@@ -1,0 +1,26 @@
+{
+  "name": "node-elasticsearch-broker",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "async": "^1.4.2",
+    "bucket_emitter": "^1.2.2",
+    "colors": "^1.1.2",
+    "elasticsearch": "^6.1.0",
+    "optimist": "^0.6.1"
+  },
+  "description": "safety elasticsearch bulk data broker with bucket and job queue",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "elasticsearch",
+    "broker",
+    "bulk",
+    "async",
+    "bucket_emitter"
+  ],
+  "author": "ejjoo",
+  "license": "ISC"
+}
