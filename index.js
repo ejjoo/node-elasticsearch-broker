@@ -98,13 +98,19 @@ var broker = function (opts)
 
 	var wait_until_end = function(cb) {
 		if (_parse_queue.length() + _parse_queue.running() != 0) {
-			setTimeout(wait_until_end, 0);
+			setTimeout(function() {
+				wait_until_end(cb)
+			}, 0);
 			return;
 		}
 
 		_total_read_count += _read_count;
 		bucket.close(function(data) {
-			_enqueue_request(data, cb);
+			_enqueue_request(data, function() {
+				if (cb && typeof cb == 'function') {
+					cb();
+				}
+			});
 		})
 	}
 
@@ -134,7 +140,8 @@ var broker = function (opts)
 		},
 		close: function(cb) {
 			wait_until_end(function() {
-				cb(_total_read_count);
+				if (cb && typeof cb == 'function')
+					cb(_total_read_count);
 			});
 		}
 	}
