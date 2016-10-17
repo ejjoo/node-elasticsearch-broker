@@ -1,5 +1,5 @@
 # node-elasticsearch-broker
-safety elasticsearch bulk data broker with bucket and job queue
+Bulk data stream transfer for elasticSearch
 
 # Usage
 ## Create
